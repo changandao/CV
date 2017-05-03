@@ -5,7 +5,7 @@ Image = double(Image);
 [x,y] = size(Image);
 segment_length = 1;
 k = 0.05;
-tau = 0.05;
+tau = 255;
 [Gx, Gy] = sobel_xy(Image);
 Gx2 = Gx.*Gx;
 Gy2 = Gy.*Gy;
@@ -35,12 +35,15 @@ end
 
 Merkmale(Merkmale < tau) = 0;
 
+
+min_dist = 10;
+
 %if varargin ==2 
-    %[mx,my] = find(Merkmale ~= 0);
-    %length(mx) + length(my)
+    [mx,my] = find(Merkmale ~= 0);
+    length(mx) + length(my)
     figure, imshow(Merkmale)
-    %hold on 
-    %plot(mx,my,'r+')
+    hold on 
+    plot(my,mx,'r+')
 %end
 
 end
