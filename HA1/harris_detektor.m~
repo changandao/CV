@@ -1,11 +1,10 @@
-function  Merkmale = harris_detektor(Image) 
+function  Merkmale = harris_detektor(Image,varargin) 
 % In dieser Funktion soll der Harris-Detektor implementiert werden, der
 % Merkmalspunkte aus dem Bild extrahiert
-Image = double(Image);
 [x,y] = size(Image);
 segment_length = 1;
 k = 0.05;
-tau = 0.05;
+tau = 10;
 [Gx, Gy] = sobel_xy(Image);
 Gx2 = Gx.*Gx;
 Gy2 = Gy.*Gy;
@@ -29,18 +28,14 @@ for i = 1:x-segment_length+1
             end
         end
         G = [Tempx2,Tempxy;Tempxy,Tempy2];
-        Merkmale(i,j) = det(G) - k * trace(G)*trace(G);
+        Merkmale(i,j) = det(G) - k * trace(G)^2;
     end
 end
 
 Merkmale(Merkmale < tau) = 0;
 
-%if varargin ==2 
-    %[mx,my] = find(Merkmale ~= 0);
-    %length(mx) + length(my)
-    figure, imshow(Merkmale)
-    %hold on 
-    %plot(mx,my,'r+')
-%end
+if varargin
+    [mx,m]
+end
 
 end

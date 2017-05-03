@@ -20,5 +20,5 @@ imshow(IGray)
 
 %% Harris-Merkmale berechnen
 tic;
-Merkmale = harris_detektor(IGray);
-toc;
+%  Merkmale = harris_detektor(IGray,'do_plot',true);
+%  toc;

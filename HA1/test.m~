@@ -1,6 +1,6 @@
 img = imread('szene.jpg');
 s = size(img);
-s[2]
+s[]
 
 
 imshow(img)
