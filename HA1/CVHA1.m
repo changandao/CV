@@ -1,5 +1,5 @@
-%  Gruppennummer:
-%  Gruppenmitglieder:
+%  Gruppennummer:m23
+%  Gruppenmitglieder: Wang,Sen 
 
 %% Hausaufgabe 1
 %  Einlesen und Konvertieren von Bildern sowie Bestimmung von 
