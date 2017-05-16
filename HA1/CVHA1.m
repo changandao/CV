@@ -12,11 +12,9 @@
 
 %% Bild laden
 Image = imread('szene.jpg');
-Image = double(Image);
+Image = im2double(Image);
 IGray = rgb_to_gray(Image);
 imshow(IGray)
-
-
 
 %% Harris-Merkmale berechnen
 tic;
